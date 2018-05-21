@@ -288,7 +288,7 @@ Mat convertToMSRCP(Mat src, int sigma1, int sigma2, int sigma3)
 				//src.at<Vec3b>(i, j)[2], src.at<Vec3b>(i, j)[2] * a);
 		}
 	}
-	return dst;//TODO
+	return dst;
 }
 
 int main(int argc, char ** argv)
@@ -311,14 +311,9 @@ int main(int argc, char ** argv)
 			}
 		}
 
-
-		//convertToSingleScaleRetinex(src, 240);
-		//getColorRestore(src, 125, 46);
 		imshow("Original", src);
-		imshow("MSRCR", convertToMSRCR(src, 5, 25, 15, 80, 170));
-		//imshow("MSRCR2", convertToMSRCR(src, 5, 25, 15, 80, 200));
+		imshow("MSRCR", convertToMSRCR(src, 5, 25, 5, 50, 170));
 		imshow("MSRCP", convertToMSRCP(src, 5, 50, 170));
-		//imshow("MSRCP2", convertToMSRCP(src, 5, 50, 200));
 		waitKey(0);
 	}
 	return 0;
